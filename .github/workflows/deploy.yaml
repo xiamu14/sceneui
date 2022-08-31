@@ -29,15 +29,13 @@ jobs:
         run: echo "::set-output name=path::$(echo ${{ matrix.package }} | sed -e 's/@sceneui\///g')"
         shell: bash
 
-      - id: check
-        uses: EndBug/version-check@v1
+      - name: Check package version
+        id: check
+        uses: PostHog/check-package-version@v2
         with:
-          file-name: packages/${{ steps.package-path.outputs.path }}/package.json
-
-      - name: Log when changed
-        if: steps.check.outputs.changed == 'true'
-        run: 'echo "Version change found in commit ${{ steps.check.outputs.commit }}! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
-
-      - name: Log when unchanged
-        if: steps.check.outputs.changed == 'false'
-        run: 'echo "No version change :/"'
+          path: ./packages/${{ steps.package-path.outputs.path }}
+      - name: Echo output
+        run: |
+          echo "Committed version: ${{ steps.check.outputs.committed-version }}"
+          echo "Published version: ${{ steps.check.outputs.published-version }}"
+          echo "Is new version: ${{ steps.check.outputs.is-new-version }}"
