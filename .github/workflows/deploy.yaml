@@ -16,14 +16,14 @@ jobs:
           version: 6.9.1
       - run: $(echo pnpm -s list-packages)
       - id: set-matrix
-        run: echo "::set-output name=matrix::{\"packages\":$(pnpm -s list-packages)}"
+        run: echo "::set-output name=matrix::{\"package\":$(pnpm -s list-packages)}"
   build:
     needs: packages
     strategy:
       matrix: ${{ fromJson(needs.packages.outputs.matrix) }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ strategy.packages }}
+      - run: echo ${{ matrix.package }}
 
       - uses: dkershner6/npm-version-check-with-comment-action@v1
         id: version-check
