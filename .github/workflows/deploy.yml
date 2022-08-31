@@ -17,6 +17,7 @@ jobs:
       - run: $(echo pnpm -s list-packages)
       - id: set-matrix
         run: echo "::set-output name=matrix::{\"package\":$(pnpm -s list-packages)}"
+
   build:
     needs: packages
     strategy:
@@ -34,6 +35,7 @@ jobs:
         uses: PostHog/check-package-version@v2
         with:
           path: ./packages/${{ steps.package-path.outputs.path }}/
+
       - name: Echo output
         run: |
           echo "Committed version: ${{ steps.check.outputs.committed-version }}"
