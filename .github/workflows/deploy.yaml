@@ -25,13 +25,17 @@ jobs:
     steps:
       - run: echo ${{ matrix.package }}
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GIT_AUTH_TOKEN }}
+      - uses: dkershner6/npm-version-check-with-comment-action@v1
+        id: version-check
+        with:
+          github-token: "${{ secrets.GIT_AUTH_TOKEN }}"
+          node-version: "16.x" # optional, defaults to 14.x
+          working-directory: "./packages/${{ matrix.package }}" # optional, defaults to root
 
-      - name: Publish
-        if: steps.changesets.outputs.hasChangesets == 'false'
-        # You can do something when a publish should happen.
-        run: echo publish
+      # Outputs whether or not it changed
+      - run: echo ${{ steps.version-check.outputs.version-did-change }}
+
+      # Optionally fail the workflow, should you choose
+      - name: Fail on no version updated
+        if: ${{ steps.version-check.outputs.version-did-change == 'false' }}
+        run: 'echo "No version change :/" && exit 1'
