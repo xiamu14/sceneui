@@ -23,7 +23,7 @@ jobs:
       matrix: ${{ fromJson(needs.packages.outputs.matrix) }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ matrix.package }}
+      - run: echo ${{ strategy.packages }}
 
       - uses: dkershner6/npm-version-check-with-comment-action@v1
         id: version-check
