@@ -32,7 +32,7 @@ jobs:
       - id: check
         uses: EndBug/version-check@v1
         with:
-          file-name: ./packages/${{ steps.package-path.outputs.path }}/package.json
+          file-name: packages/${{ steps.package-path.outputs.path }}/package.json
 
       - name: Log when changed
         if: steps.check.outputs.changed == 'true'
