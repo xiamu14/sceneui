@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  packages:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.9.1
+      - run: $(echo pnpm -s list-packages2)
+      - id: set-matrix
+        run: echo "::set-output name=matrix::{\"packages\":$(pnpm -s list-packages)}"
+  build:
+    needs: packages
+    strategy:
+      matrix: ${{ fromJson(needs.packages.outputs.matrix) }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ matrix.package }}

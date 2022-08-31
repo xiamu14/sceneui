@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "contentlayer": "^0.2.7",
+    "next-contentlayer": "^0.2.7"
+  },
+  "scripts": {
+    "list-packages": "echo [$(pnpm -s m ls --depth -1 | tr \" \" \"\n\" | grep -o \"@.*@\" | rev | cut -c 2- | rev | sed -e 's/\\(.*\\)/\"\\1\"/' | paste -sd, - )]"
+  }
+}
