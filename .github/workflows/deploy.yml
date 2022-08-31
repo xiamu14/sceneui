@@ -24,6 +24,8 @@ jobs:
       matrix: ${{ fromJson(needs.packages.outputs.matrix) }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - run: echo ${{ matrix.package }}
 
       - id: package-path
@@ -37,7 +39,7 @@ jobs:
           path: ./packages/${{ steps.package-path.outputs.path }}/
 
       - name: Echo output
+        if: steps.check.outputs.is-new-version == 'true'
         run: |
-          echo "Committed version: ${{ steps.check.outputs.committed-version }}"
-          echo "Published version: ${{ steps.check.outputs.published-version }}"
-          echo "Is new version: ${{ steps.check.outputs.is-new-version }}"
+          echo "Latest published version: ${{ steps.check.outputs.published-version }}"
+          echo "Repo version: ${{ steps.check.outputs.committed-version }}"
