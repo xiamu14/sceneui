@@ -25,14 +25,14 @@ jobs:
     steps:
       - run: echo ${{ matrix.package }}
 
-      - id: get-path
-        run: echo "::set-output name=package-path::$(echo ${{ matrix.package }} | sed -e 's/@sceneui\///g')"
+      - id: package-path
+        run: echo "::set-output name=path::$(echo ${{ matrix.package }} | sed -e 's/@sceneui\///g')"
         shell: bash
 
       - id: check
         uses: EndBug/version-check@v1
         with:
-          file-name: base/packages/${{ matrix.package }}/package.json
+          file-name: base/packages/${{ steps.package-path.outputs.path }}/package.json
 
       - name: Log when changed
         if: steps.check.outputs.changed == 'true'
