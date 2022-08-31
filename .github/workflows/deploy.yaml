@@ -25,12 +25,16 @@ jobs:
     steps:
       - run: echo ${{ matrix.package }}
 
+      - id: get-path
+        run: echo "::set-output name=package-path::$(echo ${{ matrix.package }} | sed -e 's/@sceneui\///g')"
+        shell: bash
+
       - uses: dkershner6/npm-version-check-with-comment-action@v1
         id: version-check
         with:
           github-token: "${{ secrets.GIT_AUTH_TOKEN }}"
           node-version: "16.x" # optional, defaults to 14.x
-          working-directory: "/packages/${{ matrix.package }}" # optional, defaults to root
+          working-directory: "/packages/${{ steps.get-path.outputs.package-path }}" # optional, defaults to root
 
       # Outputs whether or not it changed
       - run: echo ${{ steps.version-check.outputs.version-did-change }}
