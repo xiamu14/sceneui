@@ -29,21 +29,15 @@ jobs:
         run: echo "::set-output name=package-path::$(echo ${{ matrix.package }} | sed -e 's/@sceneui\///g')"
         shell: bash
 
-      - uses: dkershner6/npm-version-check-with-comment-action@v1
-        id: version-check
+      - id: check
+        uses: EndBug/version-check@v1
         with:
-          github-token: "${{ secrets.GIT_AUTH_TOKEN }}"
-          node-version: "16.x" # optional, defaults to 14.x
-          working-directory: "/packages/${{ steps.get-path.outputs.package-path }}" # optional, defaults to root
+          file-name: base/packages/${{ matrix.package }}/package.json
 
-      # Outputs whether or not it changed
-      - run: echo ${{ steps.version-check.outputs.version-did-change }}
+      - name: Log when changed
+        if: steps.check.outputs.changed == 'true'
+        run: 'echo "Version change found in commit ${{ steps.check.outputs.commit }}! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
 
-      # Optionally fail the workflow, should you choose
-      - name: Fail on no version updated
-        if: ${{ steps.version-check.outputs.version-did-change == 'false' }}
-        run: 'echo "No version change." && exit 0'
-
-      - name: Fail on no version updated
-        if: ${{ steps.version-check.outputs.version-did-change == 'true' }}
-        run: 'echo "version change"'
+      - name: Log when unchanged
+        if: steps.check.outputs.changed == 'false'
+        run: 'echo "No version change :/"'
