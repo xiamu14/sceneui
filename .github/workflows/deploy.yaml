@@ -33,7 +33,7 @@ jobs:
         id: check
         uses: PostHog/check-package-version@v2
         with:
-          path: packages/${{ steps.package-path.outputs.path }}
+          path: ./packages/${{ steps.package-path.outputs.path }}/
       - name: Echo output
         run: |
           echo "Committed version: ${{ steps.check.outputs.committed-version }}"
