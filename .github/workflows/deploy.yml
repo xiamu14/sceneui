@@ -39,7 +39,15 @@ jobs:
           path: ./packages/${{ steps.package-path.outputs.path }}/
 
       - name: Echo output
-        if: steps.check.outputs.is-new-version == 'true'
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.9.1
+
+        # if: steps.check.outputs.is-new-version == 'true'
+
         run: |
           echo "Latest published version: ${{ steps.check.outputs.published-version }}"
           echo "Repo version: ${{ steps.check.outputs.committed-version }}"
+          pnpm publish ./packages/${{ steps.package-path.outputs.path }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
