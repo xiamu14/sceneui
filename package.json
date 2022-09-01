@@ -13,22 +13,6 @@
     "deploy": "turbo run build --filter=document --no-deps",
     "list-packages": "echo [$(pnpm -s m ls --depth -1 | tr \" \" \"\n\" | grep -o \"@.*@\" | rev | cut -c 2- | rev | sed -e 's/\\(.*\\)/\"\\1\"/' | paste -sd, - )]"
   },
-  "turbo": {
-    "pipeline": {
-      "dev": {
-        "cache": false
-      },
-      "build": {
-        "dependsOn": [
-          "^build"
-        ],
-        "outputs": [
-          ".next/**",
-          "dist/**"
-        ]
-      }
-    }
-  },
   "devDependencies": {
     "pnpm": "^7.9.5",
     "turbo": "^1.4.3"
