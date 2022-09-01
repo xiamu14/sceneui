@@ -19,7 +19,7 @@ jobs:
         uses: bduff9/use-npmrc@v1.1
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
-          working-directory: packages/button
+          working-directory: /home/runner/work/sceneui/sceneui/packages/button
         env:
           ACTIONS_RUNNER_DEBUG: true
 
