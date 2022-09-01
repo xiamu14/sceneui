@@ -14,15 +14,7 @@ jobs:
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org/"
-
-      - name: Use .npmrc
-        uses: bduff9/use-npmrc@v1.1
-        with:
-          dot-npmrc: ${{ secrets.DOT_NPMRC }}
-          working-directory: /home/runner/work/sceneui/sceneui/packages/button
-        env:
-          ACTIONS_RUNNER_DEBUG: true
-
+          token: ${{ secrets. }}
       - uses: pnpm/action-setup@v2
         with:
           version: 6.9.1
