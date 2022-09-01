@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "pnpm": "^7.9.5",
+    "renew-it": "^1.5.2",
     "turbo": "^1.4.3"
   }
 }
