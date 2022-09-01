@@ -22,3 +22,5 @@ jobs:
         with:
           version: 6.9.1
       - run: pnpm publish ./packages/button --access=public --no-git-checks
+        env:
+          ACTIONS_RUNNER_DEBUG: true
