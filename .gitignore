@@ -4,3 +4,7 @@ dist
 .cache
 next
 build
+
+
+# Contentlayer
+.contentlayer
