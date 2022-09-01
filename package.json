@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "deploy": "turbo run build --scope=app --includeDependencies --no-deps",
+    "deploy": "turbo run build --filter=document --no-deps",
     "list-packages": "echo [$(pnpm -s m ls --depth -1 | tr \" \" \"\n\" | grep -o \"@.*@\" | rev | cut -c 2- | rev | sed -e 's/\\(.*\\)/\"\\1\"/' | paste -sd, - )]"
   },
   "turbo": {
