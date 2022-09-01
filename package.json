@@ -3,6 +3,10 @@
     "contentlayer": "^0.2.7",
     "next-contentlayer": "^0.2.7"
   },
+  "workspaces": [
+    "packages/*",
+    "document"
+  ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
