@@ -9,9 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/generatenpmrc@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
+          name-repo: "sceneui"
+          working-directory: ${{ github.workspace }}/packages/button
       - uses: pnpm/action-setup@v2
         with:
           version: 6.9.1
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - run: pnpm publish ./packages/button --access=public --no-git-checks
