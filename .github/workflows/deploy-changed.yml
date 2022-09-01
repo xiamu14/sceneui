@@ -43,7 +43,7 @@ jobs:
         with:
           version: 6.9.1
 
-        # if: steps.check.outputs.is-new-version == 'true'
+        if: steps.check.outputs.is-new-version == 'true'
 
         run: |
           echo "Latest published version: ${{ steps.check.outputs.published-version }}"

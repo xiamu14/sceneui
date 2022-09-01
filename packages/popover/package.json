@@ -1,7 +1,7 @@
 {
   "name": "@sceneui/popover",
-  "private": true,
-  "version": "0.0.2",
+  "private": false,
+  "version": "0.0.1-alpha.0",
   "main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
   "scripts": {
