@@ -9,18 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
           node-version: "16.x"
           registry-url: "https://registry.npmjs.org/"
+
       - name: Use .npmrc
         uses: bduff9/use-npmrc@v1.1
         with:
           dot-npmrc: ${{ secrets.DOT_NPMRC }}
           working-directory: ./packages/button
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+
       - uses: pnpm/action-setup@v2
         with:
           version: 6.9.1
       - run: pnpm publish ./packages/button --access=public --no-git-checks
-        env:
-          ACTIONS_RUNNER_DEBUG: true
