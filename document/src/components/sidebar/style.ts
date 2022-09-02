@@ -24,23 +24,27 @@ export const H1 = styled.h1`
 `;
 
 export const MenuName = styled.h3`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
   color: #7e868c;
   ${(props: { isActive?: boolean }) =>
     props.isActive &&
     css`
       color: #11181c;
+      font-weight: bold;
     `}
 `;
 
 export const MenuItem = styled.li`
-  height: 40px;
+  height: 36px;
   color: #7e868c;
+  line-height: 36px;
+  font-size: 14px;
   ${(props: { isActive?: boolean }) =>
     props.isActive &&
     css`
       color: #11181c;
+      font-weight: bold;
     `}
 `;
 
@@ -51,5 +55,5 @@ export const MenuIconBoard = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #9697f6;
+  background-color: #a7a8f6;
 `;

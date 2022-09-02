@@ -129,7 +129,7 @@ const Sidebar = () => {
                   animate={expanded === menu.id ? 'expanded' : 'closed'}
                 >
                   <Center>
-                    <ChevronRight size={18} color="#999" />
+                    <ChevronRight size={16} color="#999" />
                   </Center>
                 </motion.div>
               </Menu>
