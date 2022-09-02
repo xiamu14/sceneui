@@ -1,9 +1,6 @@
----
-title: button
-date: 2022/09/02
----
-
 # Button
+
+Buttons allow users to perform actions and choose with a single tap.
 
 ```js
 import { Button } from '@sceneui/button';
@@ -33,4 +30,14 @@ import { Button } from '@sceneui/button';
 import { Check } from 'react-feather';
 
 <Button icon={<Check />}>完成</Button>;
+```
+
+## Props
+
+```js
+export interface Props {
+  className?: string;
+  onClick?: MouseEventHandle<HTMLButtonElement>;
+  round?: boolean;
+}
 ```

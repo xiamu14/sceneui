@@ -2,35 +2,26 @@
 
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import { remarkCodeHike } from '@code-hike/mdx';
-import theme from './src/theme/github-light';
+import theme from './src/theme/dracula';
 
-export const ComponentDoc = defineDocumentType(() => ({
-  name: 'draft',
+export const Draft = defineDocumentType(() => ({
+  name: 'Draft',
   filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
-  fields: {
-    title: {
-      type: 'string',
-      description: 'The title of the post',
-      required: true,
-    },
-    date: {
-      type: 'date',
-      description: 'The date of the post',
-      required: true,
-    },
-  },
   computedFields: {
     url: {
       type: 'string',
-      resolve: (post) => `/components/${post._raw.flattenedPath}`,
+      resolve: (draft) => {
+        if (draft._raw.flattenedPath === 'guide') return '/';
+        return `/${draft._raw.flattenedPath}`;
+      },
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: 'src/data',
-  documentTypes: [ComponentDoc],
+  contentDirPath: 'src/draft',
+  documentTypes: [Draft],
   mdx: {
     remarkPlugins: [
       [remarkCodeHike, { theme, lineNumbers: false, showCopyButton: true }],

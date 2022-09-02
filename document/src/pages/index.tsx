@@ -1,7 +1,7 @@
 // pages/index.js
 
 import Head from 'next/head';
-
+import { RecoilRoot } from 'recoil';
 import AppContainer from '../components/app_container';
 import Content from '../components/content';
 import Navbar from '../components/navbar';
@@ -9,7 +9,7 @@ import Sidebar from '../components/sidebar';
 
 export default function Home() {
   return (
-    <div>
+    <RecoilRoot>
       <Head>
         <title>Scene UI</title>
       </Head>
@@ -18,6 +18,6 @@ export default function Home() {
         <Sidebar />
         <Content />
       </AppContainer>
-    </div>
+    </RecoilRoot>
   );
 }
