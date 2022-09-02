@@ -42,12 +42,30 @@ const Navbar = () => {
               Components
             </NavLinkItem>
           </Link>
-          <Link href="">Feedback</Link>
+          <a
+            href="https://github.com/xiamu14/sceneui/discussions/new?category=fallback"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Feedback
+          </a>
         </NavLink>
         <Space x={60} />
         <SocialLink>
-          <Twitter color="#889096" />
-          <Github color="#889096" />
+          <a
+            href="https://twitter.com/BenjarminX"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Twitter color="#889096" />
+          </a>
+          <a
+            href="https://github.com/xiamu14/sceneui"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github color="#889096" />
+          </a>
         </SocialLink>
       </NavContent>
     </NavMainLayout>

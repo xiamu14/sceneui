@@ -16,7 +16,9 @@ const Footer = () => {
     <Container>
       <p>Deployed on</p>
       <Space x={10} />
-      <VercelLogo />
+      <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">
+        <VercelLogo />
+      </a>
     </Container>
   );
 };
