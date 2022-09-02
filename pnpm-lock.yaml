@@ -6,6 +6,7 @@ importers:
     specifiers:
       clsx: ^1.2.1
       contentlayer: ^0.2.7
+      framer-motion: ^7.2.1
       next-contentlayer: ^0.2.7
       pnpm: ^7.9.5
       renew-it: ^1.5.2
@@ -14,6 +15,7 @@ importers:
     dependencies:
       clsx: 1.2.1
       contentlayer: registry.npmjs.org/contentlayer/0.2.7
+      framer-motion: 7.2.1
       next-contentlayer: registry.npmjs.org/next-contentlayer/0.2.7
     devDependencies:
       pnpm: 7.9.5
@@ -1619,6 +1621,22 @@ packages:
     dependencies:
       to-regex-range: 5.0.1
     dev: true
+
+  /framer-motion/7.2.1:
+    resolution: {integrity: sha512-bt2ZqqGpPsW6UojYUa5poWQJu3sDr4Dp3IZsdVBYdKUJ8p+9PxOk1fYRAT8lTGGmaC5HFoKrbDXQeKWGAKZz9g==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@motionone/dom': 10.13.1
+      framesync: 6.1.2
+      hey-listen: 1.0.8
+      popmotion: 11.0.5
+      style-value-types: 5.1.2
+      tslib: 2.4.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
 
   /framer-motion/7.2.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-bt2ZqqGpPsW6UojYUa5poWQJu3sDr4Dp3IZsdVBYdKUJ8p+9PxOk1fYRAT8lTGGmaC5HFoKrbDXQeKWGAKZz9g==}
