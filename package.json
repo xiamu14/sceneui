@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "clsx": "^1.2.1",
     "contentlayer": "^0.2.7",
+    "framer-motion": "^7.2.1",
     "next-contentlayer": "^0.2.7"
   },
   "workspaces": [
@@ -16,6 +18,7 @@
   "devDependencies": {
     "pnpm": "^7.9.5",
     "renew-it": "^1.5.2",
+    "sass": "^1.54.8",
     "turbo": "^1.4.3"
   }
 }

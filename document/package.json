@@ -9,18 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sceneui/badge": "workspace:^0.0.0",
     "@sceneui/button": "workspace:*",
+    "@sceneui/space": "workspace:^0.0.0",
     "contentlayer": "^0.2.7",
     "next": "12.2.5",
     "next-contentlayer": "^0.2.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@code-hike/mdx": "^0.7.4",
     "@types/node": "18.7.14",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
+    "@types/styled-components": "^5.1.26",
     "add": "^2.0.6",
     "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
