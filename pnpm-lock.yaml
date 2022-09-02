@@ -6,7 +6,6 @@ importers:
     specifiers:
       clsx: ^1.2.1
       contentlayer: ^0.2.7
-      framer-motion: ^7.2.1
       next-contentlayer: ^0.2.7
       pnpm: ^7.9.5
       renew-it: ^1.5.2
@@ -15,7 +14,6 @@ importers:
     dependencies:
       clsx: 1.2.1
       contentlayer: registry.npmjs.org/contentlayer/0.2.7
-      framer-motion: 7.2.1
       next-contentlayer: registry.npmjs.org/next-contentlayer/0.2.7
     devDependencies:
       pnpm: 7.9.5
@@ -38,6 +36,7 @@ importers:
       contentlayer: ^0.2.7
       eslint: 8.23.0
       eslint-config-next: 12.2.5
+      framer-motion: ^7.2.1
       nanoid: ^4.0.0
       next: 12.2.5
       next-contentlayer: ^0.2.7
@@ -55,6 +54,7 @@ importers:
       '@sceneui/center': link:../packages/center
       '@sceneui/space': link:../packages/space
       contentlayer: registry.npmjs.org/contentlayer/0.2.7
+      framer-motion: 7.2.1_biqbaboplfbrettd7655fr4n2y
       nanoid: 4.0.0
       next: registry.npmjs.org/next/12.2.5_biqbaboplfbrettd7655fr4n2y
       next-contentlayer: registry.npmjs.org/next-contentlayer/0.2.7_3xcjr4wz26biff45sz3jtokgje
@@ -1620,7 +1620,7 @@ packages:
       to-regex-range: 5.0.1
     dev: true
 
-  /framer-motion/7.2.1:
+  /framer-motion/7.2.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-bt2ZqqGpPsW6UojYUa5poWQJu3sDr4Dp3IZsdVBYdKUJ8p+9PxOk1fYRAT8lTGGmaC5HFoKrbDXQeKWGAKZz9g==}
     peerDependencies:
       react: ^18.0.0
@@ -1630,6 +1630,8 @@ packages:
       framesync: 6.1.2
       hey-listen: 1.0.8
       popmotion: 11.0.5
+      react: registry.npmjs.org/react/18.2.0
+      react-dom: registry.npmjs.org/react-dom/18.2.0_react@18.2.0
       style-value-types: 5.1.2
       tslib: 2.4.0
     optionalDependencies:
