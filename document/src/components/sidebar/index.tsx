@@ -1,7 +1,13 @@
 import Space from '@sceneui/space';
 import { useLocation } from 'react-use';
 import Link from 'next/link';
-import { createElement, memo, MouseEventHandler, useState } from 'react';
+import {
+  createElement,
+  memo,
+  MouseEventHandler,
+  useEffect,
+  useState,
+} from 'react';
 import {
   Book,
   ChevronRight,
@@ -81,6 +87,17 @@ const menuIconVariants = {
 const Sidebar = () => {
   const [expanded, setExpanded] = useState<string>();
   const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname) {
+      const menu = menus.find((menu) => {
+        return (
+          menu.items.findIndex((item) => item.href === location.pathname) !== -1
+        );
+      });
+      setExpanded(menu?.id);
+    }
+  }, [location.pathname]);
 
   const handleExpanded: MouseEventHandler<HTMLDivElement> = (event) => {
     const id = (event.currentTarget as HTMLDivElement).dataset['id'];

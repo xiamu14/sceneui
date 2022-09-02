@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Badge } from '@sceneui/badge';
 import {
   NavContent,
@@ -13,7 +12,7 @@ import { useLocation } from 'react-use';
 import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { navbarDetachedAtom } from '../../atom/navbar';
-import { Github, Twitter } from '../logo';
+import { Github, SceneLogo, Twitter } from '../logo';
 
 const Navbar = () => {
   const location = useLocation();
@@ -30,7 +29,7 @@ const Navbar = () => {
   return (
     <NavMainLayout>
       <NavContent isDetached>
-        <Image src="/sceneui.svg" alt="logo" width="100px" height="60px" />
+        <SceneLogo width="100px" height="20px" />
         <Space x="10px" />
         <Badge>BETA</Badge>
         <Space flex />
@@ -45,7 +44,7 @@ const Navbar = () => {
           </Link>
           <Link href="">Feedback</Link>
         </NavLink>
-        <Space flex />
+        <Space x={60} />
         <SocialLink>
           <Twitter color="#889096" />
           <Github color="#889096" />
