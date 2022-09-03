@@ -1,0 +1,55 @@
+# Space
+
+Space component provide empty space, and occupy the remaining space of the full flex layout.
+
+```js
+import Space from '@sceneui/space';
+```
+
+### Empty space
+
+Provide empty space on horizontal direction or vertical direction.
+
+<div style={{ display: 'flex' }}>
+  <Check />
+  <Space x={20} />
+  <Check />
+</div>
+
+<CH.Code>
+```js x.tsx
+<Space x={20} />
+```
+```js y.tsx
+<Space y={20}>
+```
+</CH.Code>
+
+### Flex layout
+
+Occupy the remaining space of the full flex layout.
+
+<CH.Code>
+  ```js space.tsx
+  <div className="flex">
+    <Space flex />
+  </div>
+  ```
+
+```css index.css
+.flex {
+  display: flex;
+}
+```
+
+</CH.Code>
+
+## Props
+
+```js
+export interface Props {
+  x?: string | number;
+  y?: string | number;
+  flex?: boolean;
+}
+```

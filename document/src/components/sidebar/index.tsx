@@ -60,6 +60,10 @@ const menus: Menu[] = [
         name: 'Button',
         href: '/component/button',
       },
+      {
+        name: 'Badge',
+        href: '/component/badge',
+      },
     ],
   },
   {
@@ -67,10 +71,6 @@ const menus: Menu[] = [
     id: '2',
     icon: Layout,
     items: [
-      {
-        name: 'Badge',
-        href: '/layout/badge',
-      },
       {
         name: 'Space',
         href: '/layout/space',
