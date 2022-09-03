@@ -2,6 +2,8 @@
 
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import { remarkCodeHike } from '@code-hike/mdx';
+import rehypeToc from '@jsdevtools/rehype-toc';
+import rehypeSlug from 'rehype-slug';
 import theme from './src/theme/dracula';
 
 export const Draft = defineDocumentType(() => ({
@@ -25,6 +27,15 @@ export default makeSource({
   mdx: {
     remarkPlugins: [
       [remarkCodeHike, { theme, lineNumbers: false, showCopyButton: true }],
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypeToc,
+        {
+          headings: ['h2', 'h3'],
+        },
+      ],
     ],
   },
 });

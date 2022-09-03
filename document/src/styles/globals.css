@@ -60,3 +60,35 @@ p > code {
   padding: 2px 4px;
   border-radius: 4px;
 }
+
+nav.toc {
+  position: fixed;
+  top: var(--navbar-height);
+  right: var(--app-container-padding-x);
+  width: var(--sidebar-width);
+  margin-top: 14px;
+}
+
+nav.toc::before {
+  content: 'Contents';
+  font-size: 24px;
+  color: #555;
+  margin: 0.67em 0;
+  display: block;
+}
+
+nav ol {
+  padding-left: 10px;
+}
+
+nav .toc-item {
+  height: 30px;
+  color: #7e868c;
+  list-style-type: none;
+  font-size: 14px;
+}
+
+nav .toc-item:hover {
+  font-weight: bold;
+  color: #11181c;
+}
