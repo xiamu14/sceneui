@@ -16,5 +16,5 @@ export const EditLink = styled.div`
   gap: 6px;
   margin-top: 80px;
   font-size: 14px;
-  color: var(--primary-color-light);
+  color: var(--primary-color);
 `;
