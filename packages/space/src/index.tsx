@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { useMemo } from "react";
-import "./index.scoped.scss";
 
 interface Props {
   x?: string | number;
