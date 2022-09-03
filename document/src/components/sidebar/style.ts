@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   position: fixed;
   top: var(--navbar-height);
-  left: var(--app-container-padding-x);
+  left: var(--content-padding-x);
   width: var(--sidebar-width);
   height: 400px;
   background: white;

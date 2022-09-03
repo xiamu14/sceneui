@@ -5,6 +5,10 @@ body {
   font-family: 'Nunito', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body::-webkit-scrollbar {
   width: 0;
 }
@@ -35,9 +39,34 @@ h4 {
 :root {
   --primary-color: #4547f6;
   --primary-color-light: #a7a8f6;
-  --app-container-padding-x: 15vw;
-  --sidebar-width: 240px;
+  --content-padding-x: 11vw;
+  --content-width: 78vw;
+  --content-max-width: 1350px;
+  --content-min-width: 1000px;
+  --sidebar-width: 210px;
+  --content-toc-width: 160px;
   --navbar-height: 76px;
+  --navbar-height-negative: -76px;
+}
+
+@media (min-width: 1730px) {
+  :root {
+    --content-padding-x: calc(50vw - 675px);
+  }
+}
+
+@media (max-width: 1282px) {
+  :root {
+    --content-padding-x: calc(50vw - 500px);
+  }
+}
+
+:target:before {
+  content: '';
+  display: block;
+  height: var(--navbar-height);
+  margin-top: calc(var(--navbar-height-negative) - 1em);
+  margin-bottom: 1em;
 }
 
 .ch-codeblock,
@@ -64,8 +93,8 @@ p > code {
 nav.toc {
   position: fixed;
   top: var(--navbar-height);
-  right: var(--app-container-padding-x);
-  width: var(--sidebar-width);
+  right: var(--content-padding-x);
+  width: var(--content-toc-width);
   margin-top: 14px;
 }
 

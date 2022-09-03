@@ -7,6 +7,7 @@ import { useLocation } from 'react-use';
 import { AnimatePresence, motion } from 'framer-motion';
 import Footer from '../footer';
 import { Edit3 } from 'react-feather';
+import Space from '@sceneui/space';
 
 const Content = () => {
   const location = useLocation();
@@ -29,7 +30,7 @@ const Content = () => {
       <AnimatePresence>
         <motion.div
           key={location.pathname}
-          style={{ margin: '0 20px' }}
+          style={{ margin: '0 10px' }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

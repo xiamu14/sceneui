@@ -110,7 +110,7 @@ const Sidebar = () => {
   return (
     <Container>
       <H1>Documentation</H1>
-      <div>
+      <div style={{ paddingLeft: '10px' }}>
         {menus.map((menu) => {
           return (
             <div key={menu.id}>
