@@ -1,17 +1,18 @@
 import React from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import "./button.scoped.scss";
+import "./index.scoped.scss";
 
 interface Props {
   icon?: React.ReactNode;
   round?: boolean;
+  className?: string;
 }
 
 const Button = (props: React.PropsWithChildren<Props>) => {
-  const { children, icon, round } = props;
+  const { children, icon, round, className = "" } = props;
   return (
-    <motion.button className={clsx("sceneui-button", { round })}>
+    <motion.button className={clsx(`sceneui-button ${className}`, { round })}>
       <>
         {icon}
         {children}

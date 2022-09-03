@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), reactScopedCssPlugin(), dts()],
   build: {
     lib: {
-      entry: "./src/index.ts",
+      entry: "./src/index.tsx",
       formats: ["cjs", "es"],
       fileName: (format) => `index.${format}.js`,
     },
