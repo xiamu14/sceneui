@@ -1,7 +1,7 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
 import Button from '@sceneui/button';
 import Space from '@sceneui/space';
-import { Check } from 'react-feather';
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import { ArrowLeft } from 'react-feather';
 const MdxComponent = ({ code }: { code: string }) => {
   const Component = useMDXComponent(code);
   return (
@@ -9,7 +9,7 @@ const MdxComponent = ({ code }: { code: string }) => {
     <Component
       components={{
         Button,
-        Check,
+        ArrowLeft,
         Space,
       }}
     />

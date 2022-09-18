@@ -1,13 +1,12 @@
-import { memo, useEffect, useState } from 'react';
 import { allDrafts } from 'contentlayer/generated';
+import { memo, useEffect, useState } from 'react';
 import { Container, EditLink } from './style';
 
-import MdxComponent from '../mdx_component';
-import { useLocation } from 'react-use';
 import { AnimatePresence, motion } from 'framer-motion';
-import Footer from '../footer';
 import { Edit3 } from 'react-feather';
-import Space from '@sceneui/space';
+import { useLocation } from 'react-use';
+import Footer from '../footer';
+import MdxComponent from '../mdx_component';
 
 const Content = () => {
   const location = useLocation();
@@ -15,12 +14,6 @@ const Content = () => {
   const [draftCode, setDraftCode] = useState<string>();
 
   useEffect(() => {
-    // console.log(
-    //   '%c debug',
-    //   'background: #69c0ff; color: white; padding: 4px',
-    //   allDrafts
-    // );
-
     const data = allDrafts.find((it) => it.url === location.pathname);
     setDraftCode(data?.body.code);
   }, [location.pathname]);

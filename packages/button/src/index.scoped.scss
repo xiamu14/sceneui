@@ -2,17 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
   outline: none;
-  background-color: #6a6cf6;
-  height: 40px;
-  width: 110px;
-  border-radius: 10px;
-  color: white;
+  height: 48px;
+  width: 128px;
+  background-color: white;
+  border-radius: 4px;
+  color: #007aff;
   font-size: 14px;
-  gap: 12px;
-
-  &.round {
-    border-radius: 21px;
+  border: 2px solid #007aff;
+  box-sizing: border-box;
+  cursor: pointer;
+  &.btn-round {
+    border-radius: 50px;
+  }
+  &.btn-solid {
+    color: white;
+    background-color: #007aff;
   }
 }

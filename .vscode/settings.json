@@ -2,5 +2,8 @@
   "cSpell.words": ["sceneui"],
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "file:///Users/ben/Documents/workspace/project/scene-ui/.github/workflows/deploy.yaml"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
   }
 }

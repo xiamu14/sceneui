@@ -14,7 +14,7 @@ import Button from '@sceneui/button';
 <Button>确认</Button>
 ```
 
-### Rounded
+### Round
 
 <Button round>确认</Button>
 
@@ -22,30 +22,59 @@ import Button from '@sceneui/button';
 <Button round>确认</Button>
 ```
 
-### Icon
+### Solid
 
-<Button icon={<Check size={20} />}>完成</Button>
+<Button solid>确认</Button>
 
 ```js
-import { Check } from 'react-feather';
+<Button solid>确认</Button>
+```
 
-<Button icon={<Check size={20} />}>完成</Button>;
+With Round
+
+<Button solid round>
+  确认
+</Button>
+```js
+<Button solid round>
+  确认
+</Button>
 ```
 
 ### Custom style
 
-Use **className** property to adjust the style of Button more flexibly.
+Use **style** property to adjust the style of Button more flexibly.
 
-#### Flat
+<Button style={{ width: 96, height: 36 }} disable>
+  确认
+</Button>
 
-#### Ghost
+```js
+<Button style={{ width: 96, height: 36 }} disable>
+  确认
+</Button>
+```
+
+With Icon
+
+<Button style={{ width: 36, height: 36 }}>
+  <ArrowLeft />
+</Button>
+
+```js
+<Button style={{ width: 36, height: 36 }}>
+  <ArrowLeft />
+</Button>
+```
 
 ## Props
 
 ```js
 export interface Props {
-  className?: string;
-  onClick?: MouseEventHandle<HTMLButtonElement>;
   round?: boolean;
+  solid?: boolean;
+  className?: string;
+  disable?: boolean;
+  style?: CSSProperties;
 }
 ```
