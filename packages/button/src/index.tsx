@@ -1,6 +1,6 @@
-import React, { CSSProperties } from "react";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import React, { CSSProperties, MouseEventHandler } from "react";
 import "./index.scoped.scss";
 
 export interface Props {
@@ -9,10 +9,19 @@ export interface Props {
   className?: string;
   disable?: boolean;
   style?: CSSProperties;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const Button = (props: React.PropsWithChildren<Props>) => {
-  const { children, round, solid, disable, style, className = "" } = props;
+  const {
+    children,
+    onClick,
+    round,
+    solid,
+    disable,
+    style,
+    className = "",
+  } = props;
   return (
     <motion.button
       className={clsx(`sceneui-button ${className}`, {
@@ -21,6 +30,7 @@ const Button = (props: React.PropsWithChildren<Props>) => {
       })}
       disabled={disable}
       style={style}
+      onClick={onClick}
     >
       <>{children}</>
     </motion.button>
