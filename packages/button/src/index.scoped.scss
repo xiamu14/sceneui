@@ -3,8 +3,8 @@
   justify-content: center;
   align-items: center;
   outline: none;
-  height: 48px;
-  width: 128px;
+  height: 32px;
+  width: 86px;
   background-color: white;
   border-radius: 6px;
   color: #007aff;
@@ -13,7 +13,7 @@
   box-sizing: border-box;
   cursor: pointer;
   &.btn-round {
-    border-radius: 50px;
+    border-radius: 43px;
   }
   &.btn-solid {
     color: white;
