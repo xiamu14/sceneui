@@ -3,7 +3,9 @@
     "clsx": "^1.2.1",
     "contentlayer": "^0.2.7",
     "framer-motion": "^7.2.1",
-    "next-contentlayer": "^0.2.7"
+    "next-contentlayer": "^0.2.7",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-react-scoped-css": "^0.6.1"
   },
   "workspaces": [
     "packages/*",

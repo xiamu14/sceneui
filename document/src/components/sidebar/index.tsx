@@ -75,6 +75,10 @@ const menus: Menu[] = [
         name: 'Space',
         href: '/layout/space',
       },
+      {
+        name: 'Center',
+        href: '/layout/center',
+      },
     ],
   },
 ];
