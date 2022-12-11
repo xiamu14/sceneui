@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
-import "./index.scss";
+import "./index.scoped.scss";
 
 const Center = ({ children }: PropsWithChildren<{}>) => {
   return <div className={clsx("sceneui-center")}>{children}</div>;

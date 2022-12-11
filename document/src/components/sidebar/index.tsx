@@ -1,5 +1,6 @@
+import Center from '@sceneui/center';
 import Space from '@sceneui/space';
-import { useLocation } from 'react-use';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import {
   createElement,
@@ -16,16 +17,15 @@ import {
   Menu as MenuIcon,
   Package,
 } from 'react-feather';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-use';
 import {
   Container,
   H1,
   Menu,
-  MenuName,
-  MenuItem,
   MenuIconBoard,
+  MenuItem,
+  MenuName,
 } from './style';
-import Center from '@sceneui/center';
 
 interface Item {
   name: string;
@@ -63,6 +63,10 @@ const menus: Menu[] = [
       {
         name: 'Badge',
         href: '/component/badge',
+      },
+      {
+        name: 'Drawer',
+        href: '/component/drawer',
       },
     ],
   },

@@ -3,7 +3,7 @@
   "version": "0.0.1-alpha.7",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rimraf dist && vite build",
     "preview": "vite preview"
   },
   "main": "./dist/index.cjs.js",

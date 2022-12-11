@@ -2,6 +2,8 @@
 
 使用 pnpm workspace 方式开发
 
+pnpm publish --no-git-checks --access=public xxx
+
 ## TODO List
 
 - [ ] Badge

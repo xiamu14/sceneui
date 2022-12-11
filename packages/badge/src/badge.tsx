@@ -11,7 +11,7 @@ interface Props {
 const defaultColor = "#6a6cf6";
 const flatColor = "#898bd7";
 
-const Button = (props: React.PropsWithChildren<Props>) => {
+const Badge = (props: React.PropsWithChildren<Props>) => {
   const { children, flat } = props;
   const style = useMemo(() => {
     const style = {};
@@ -31,4 +31,4 @@ const Button = (props: React.PropsWithChildren<Props>) => {
   );
 };
 
-export default Button;
+export default Badge;

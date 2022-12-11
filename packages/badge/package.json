@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "rimraf dist && vite build",
     "preview": "vite preview"
   },
   "main": "./dist/index.cjs.js",
@@ -11,7 +11,13 @@
   "types": "./dist/src/index.d.ts",
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "clsx": "^1.2.1"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "clsx": "^1.2.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.33",

@@ -1,17 +1,17 @@
-import { Badge } from '@sceneui/badge';
-import {
-  NavContent,
-  NavMainLayout,
-  NavLink,
-  NavLinkItem,
-  SocialLink,
-  NavContainer,
-} from './style';
+import Badge from '@sceneui/badge';
 import Space from '@sceneui/space';
 import Link from 'next/link';
-import { useLocation } from 'react-use';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-use';
 import { Github, SceneLogo, Twitter } from '../logo';
+import {
+  NavContainer,
+  NavContent,
+  NavLink,
+  NavLinkItem,
+  NavMainLayout,
+  SocialLink,
+} from './style';
 
 const Navbar = () => {
   const location = useLocation();
