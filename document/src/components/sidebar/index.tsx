@@ -1,5 +1,4 @@
-import Center from '@sceneui/center';
-import Space from '@sceneui/space';
+import { Center, Space } from '@sceneui/layout';
 import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import {

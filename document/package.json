@@ -11,8 +11,7 @@
   "dependencies": {
     "@sceneui/badge": "workspace:*",
     "@sceneui/button": "workspace:*",
-    "@sceneui/center": "workspace:*",
-    "@sceneui/space": "workspace:*",
+    "@sceneui/layout": "workspace:^0.0.1",
     "contentlayer": "^0.2.8",
     "framer-motion": "^7.2.1",
     "nanoid": "^4.0.0",

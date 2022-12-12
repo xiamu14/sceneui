@@ -33,9 +33,7 @@ importers:
       '@jsdevtools/rehype-toc': ^3.0.2
       '@sceneui/badge': workspace:*
       '@sceneui/button': workspace:*
-      '@sceneui/center': workspace:*
-      '@sceneui/drawer': workspace:^0.0.1
-      '@sceneui/space': workspace:*
+      '@sceneui/layout': workspace:^0.0.1
       '@types/node': 18.7.14
       '@types/react': 18.0.17
       '@types/react-dom': 18.0.6
@@ -62,9 +60,7 @@ importers:
     dependencies:
       '@sceneui/badge': link:../packages/badge
       '@sceneui/button': link:../packages/button
-      '@sceneui/center': link:../packages/center
-      '@sceneui/drawer': link:../packages/drawer
-      '@sceneui/space': link:../packages/space
+      '@sceneui/layout': link:../packages/layout
       contentlayer: 0.2.8
       framer-motion: 7.2.1_biqbaboplfbrettd7655fr4n2y
       nanoid: 4.0.0
@@ -2651,8 +2647,8 @@ packages:
       framesync: 6.1.2
       hey-listen: 1.0.8
       popmotion: 11.0.5
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
+      react: registry.npmjs.org/react/18.2.0
+      react-dom: registry.npmjs.org/react-dom/18.2.0_react@18.2.0
       style-value-types: 5.1.2
       tslib: 2.4.0
     optionalDependencies:
@@ -2968,7 +2964,7 @@ packages:
     dev: false
 
   /is-extglob/2.1.1:
-    resolution: {integrity: sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=}
+    resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
 
   /is-fullwidth-code-point/3.0.0:

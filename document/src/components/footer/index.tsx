@@ -1,4 +1,4 @@
-import Space from '@sceneui/space';
+import { Space } from '@sceneui/layout';
 import styled from 'styled-components';
 import { VercelLogo } from '../logo';
 

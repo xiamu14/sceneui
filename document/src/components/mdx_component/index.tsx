@@ -1,7 +1,6 @@
 import Badge from '@sceneui/badge';
 import Button from '@sceneui/button';
-import Center from '@sceneui/center';
-import Space from '@sceneui/space';
+import { Center, Space } from '@sceneui/layout';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { ArrowLeft, ChevronLeft, Home } from 'react-feather';
 const MdxComponent = ({ code }: { code: string }) => {

@@ -1,5 +1,5 @@
 import Badge from '@sceneui/badge';
-import Space from '@sceneui/space';
+import { Space } from '@sceneui/layout';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-use';
