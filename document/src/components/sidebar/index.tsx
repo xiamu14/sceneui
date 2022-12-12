@@ -64,8 +64,8 @@ const menus: Menu[] = [
         href: '/component/badge',
       },
       {
-        name: 'Drawer',
-        href: '/component/drawer',
+        name: 'AnimatedModal',
+        href: '/component/animated-modal',
       },
     ],
   },

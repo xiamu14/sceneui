@@ -1,10 +1,10 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import dts from "vite-plugin-dts";
 import reactScopedCssPlugin from "rollup-plugin-react-scoped-css";
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), reactScopedCssPlugin(), dts()],
+  plugins: [react(), reactScopedCssPlugin() as any, dts()],
   build: {
     lib: {
       entry: "./src/index.ts",
@@ -12,7 +12,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom","clsx"],
+      external: ["react", "react-dom", "clsx"],
     },
   },
 });

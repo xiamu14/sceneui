@@ -4,15 +4,16 @@ import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), reactScopedCssPlugin() as any, dts()],
+  plugins: [react(), dts(), reactScopedCssPlugin() as any],
   build: {
     lib: {
       entry: "./src/index.tsx",
-      formats: ["cjs", "es"],
-      fileName: (format) => `index.${format}.js`,
+      formats: ["es"],
+      fileName: () => "index.js",
     },
+    minify: true,
     rollupOptions: {
-      external: ["react", "react-dom", "framer-motion"],
+      external: ["react", "react-dom", "clsx", "framer-motion"],
     },
   },
 });

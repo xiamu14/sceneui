@@ -1,5 +1,6 @@
 // pages/index.js
 
+import NiceModal from '@ebay/nice-modal-react';
 import Head from 'next/head';
 import { RecoilRoot } from 'recoil';
 import AppContainer from '../components/app_container';
@@ -13,11 +14,13 @@ export default function Home() {
       <Head>
         <title>Scene UI</title>
       </Head>
-      <AppContainer>
-        <Navbar />
-        <Sidebar />
-        <Content />
-      </AppContainer>
+      <NiceModal.Provider>
+        <AppContainer>
+          <Navbar />
+          <Sidebar />
+          <Content />
+        </AppContainer>
+      </NiceModal.Provider>
     </RecoilRoot>
   );
 }

@@ -1,0 +1,41 @@
+# AnimatedModal
+
+Displays a dialog with a custom content that requires attention or provides additional information.
+
+```js
+import AnimatedModal from '@sceneui/animated-modal';
+```
+
+### Default
+
+work with `@ebay/nice-modal-react`
+
+<ExampleModal />
+
+```jsx
+import NiceModal, { useModal } from '@ebay/nice-modal-react';
+import AnimatedModal from '@sceneui/animated-modal';
+import Button from '@sceneui/button';
+
+const Modal = NiceModal.create(() => {
+  const { visible, hide, show } = useModal();
+  return (
+    <AnimatedModal visible={visible} hide={hide} show={show}>
+      <div>测试</div>
+    </AnimatedModal>
+  );
+});
+
+export default function ExampleModal() {
+  const handleShow = () => {
+    NiceModal.show(Modal);
+  };
+  return (
+    <div>
+      <Button solid onClick={handleShow}>
+        显示
+      </Button>
+    </div>
+  );
+}
+```

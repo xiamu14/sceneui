@@ -1,0 +1,36 @@
+.animated-modal {
+  .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(66, 66, 66, 0.4);
+    justify-content: center;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    z-index: 120;
+    .modal {
+      width: auto;
+      height: auto;
+      background: #fff;
+      box-shadow: 0px 2px 10px 0px rgba(92, 92, 92, 0.3);
+      border-radius: 16px;
+      padding: 30px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .btn-close-modal {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      cursor: pointer;
+    }
+  }
+}
