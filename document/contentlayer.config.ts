@@ -1,8 +1,8 @@
 // contentlayer.config.js
 
-import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import { remarkCodeHike } from '@code-hike/mdx';
 import rehypeToc from '@jsdevtools/rehype-toc';
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypeSlug from 'rehype-slug';
 import theme from './src/theme/dracula';
 
@@ -31,6 +31,7 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       [
+        // @ts-ignore
         rehypeToc,
         {
           headings: ['h2', 'h3'],
