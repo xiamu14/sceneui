@@ -1,0 +1,27 @@
+# Popover
+
+Badges are used as a small numerical value or status descriptor for UI elements.
+
+```js
+import Popover from '@sceneui/popover';
+```
+
+### Default
+
+<ExamplePopover>
+  <Button>弹出</Button>
+</ExamplePopover>
+
+```jsx
+import Button from '@sceneui/button';
+import Popover from '@sceneui/popover';
+export default function ExamplePopover() {
+  return (
+    <div>
+      <Popover content={({ hide }) => <div onClick={hide}>测试一下下而已</div>}>
+        <Button>显示</Button>
+      </Popover>
+    </div>
+  );
+}
+```

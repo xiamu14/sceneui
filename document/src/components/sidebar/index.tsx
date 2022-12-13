@@ -67,6 +67,10 @@ const menus: Menu[] = [
         name: 'AnimatedModal',
         href: '/component/animated-modal',
       },
+      {
+        name: 'Popover',
+        href: '/component/popover',
+      },
     ],
   },
   {
