@@ -15,6 +15,7 @@ import {
   Layout,
   Menu as MenuIcon,
   Package,
+  Edit,
 } from 'react-feather';
 import { useLocation } from 'react-use';
 import {
@@ -70,6 +71,17 @@ const menus: Menu[] = [
       {
         name: 'Popover',
         href: '/component/popover',
+      },
+    ],
+  },
+  {
+    name: 'Data',
+    id: '3',
+    icon: Edit,
+    items: [
+      {
+        name: 'Input',
+        href: '/data/input',
       },
     ],
   },

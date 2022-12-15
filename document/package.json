@@ -13,6 +13,7 @@
     "@sceneui/animated-modal": "workspace:*",
     "@sceneui/badge": "workspace:*",
     "@sceneui/button": "workspace:*",
+    "@sceneui/input": "workspace:*",
     "@sceneui/layout": "workspace:*",
     "@sceneui/popover": "workspace:*",
     "contentlayer": "^0.2.8",

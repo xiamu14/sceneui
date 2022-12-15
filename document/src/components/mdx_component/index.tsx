@@ -3,6 +3,7 @@ import Button from '@sceneui/button';
 import { Center, Space } from '@sceneui/layout';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { ArrowLeft, ChevronLeft, Home } from 'react-feather';
+import ExampleInput from '../example_input';
 import ExampleModal from '../modal';
 import ExamplePopover from '../popover';
 const MdxComponent = ({ code }: { code: string }) => {
@@ -20,6 +21,7 @@ const MdxComponent = ({ code }: { code: string }) => {
         Badge,
         ExampleModal,
         ExamplePopover,
+        ExampleInput,
       }}
     />
   );

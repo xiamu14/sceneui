@@ -1,0 +1,27 @@
+# Input
+
+Inputs fields are used to get the user input in a text field.
+
+```js
+import Input from '@sceneui/input';
+```
+
+<ExampleInput />
+
+```jsx
+import Input from '@sceneui/input';
+import { ChangeEvent, useCallback, useState } from 'react';
+
+export default function ExampleInput() {
+  const [value, setValue] = useState<string>();
+
+  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
+  }, []);
+
+  return <Input value={value} onChange={handleChange} />;
+}
+
+```
+
+<ExampleInput placeholder="placeholder" />

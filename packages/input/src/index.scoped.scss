@@ -1,0 +1,16 @@
+.sceneui-input {
+  display: inline-block;
+  min-width: 132px;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  padding: 0 7.5px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  outline: none;
+  &:focus {
+    border-color: #007aff;
+  }
+}
