@@ -1,13 +1,14 @@
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import clsx from "clsx";
 import "./index.scoped.scss";
 
 const OFFSET = 16; // the offset between target and content
 export enum Position {
-  BottomLeft,
-  BottomCenter,
+  BottomLeft = "bottomLeft",
+  BottomCenter = "bottomCenter",
+  TopCenter = "topCenter",
 }
 
 interface Props {
@@ -45,6 +46,12 @@ export default function Popover(props: React.PropsWithChildren<Props>) {
           left: domRect.left + domRect.width / 2,
           transform: "translate(-50%)",
         });
+      } else if (position === Position.TopCenter) {
+        setContentStyle({
+          top: domRect.top - offset,
+          left: domRect.left + domRect.width / 2,
+          transform: "translate(-50%, -100%)",
+        });
       }
     }
   }, []);
@@ -72,7 +79,12 @@ export default function Popover(props: React.PropsWithChildren<Props>) {
             >
               <div className={clsx("content")} style={contentStyle}>
                 {content({ hide: handleHide })}
-                <div className={clsx("arrow", "bottom")}></div>
+                <div
+                  className={clsx("arrow", {
+                    bottom: position.includes("bottom"),
+                    top: position.includes("top"),
+                  })}
+                ></div>
               </div>
             </motion.div>
           )}
